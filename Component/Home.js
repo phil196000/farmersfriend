@@ -1,5 +1,12 @@
 import React from 'react';
-import {View, Text, Dimensions, Image, TouchableOpacity} from 'react-native';
+import {
+  View,
+  Text,
+  Dimensions,
+  Image,
+  TouchableOpacity,
+  ScrollView,
+} from 'react-native';
 import cloud from './assets/cloud.png';
 import farm from './assets/farm.png';
 import cropCheck from './assets/cropCheck.png';
@@ -88,108 +95,115 @@ const Home = props => {
           }}>
           Services available
         </Text>
-        <View
-          style={{
-            paddingHorizontal: 43,
-            paddingVertical: 20,
+        <ScrollView
+          style={{flex: 1}}
+          contentContainerStyle={{
             width: Dimensions.get('window').width,
-            flexWrap: 'wrap',
-            flexDirection: 'row',
-
-            // flex: 0.5,
-            justifyContent: 'space-between',
+            height: Dimensions.get('window').height,
           }}>
-          <TouchableOpacity
+          <View
             style={{
-              width: 120,
-              height: 120,
-              elevation: 6,
-              backgroundColor: '#fff',
-              padding: 5,
-              borderRadius: 5,
-              alignItems: 'center',
-            }}>
-            <Image source={farmCheck} style={{height: 75, width: 75}} />
-            <Text style={{color: '#21C748', marginTop: 10, fontSize: 15}}>
-              Farm check
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            onPress={() => {
-              props.navigation.navigate('Crop');
-            }}
-            style={{
-              width: 120,
-              height: 120,
-              elevation: 6,
-              backgroundColor: '#fff',
-              padding: 5,
-              borderRadius: 5,
-              alignItems: 'center',
-            }}>
-            <Image source={cropCheck} style={{height: 75, width: 75}} />
-            <Text
-              style={{
-                color: '#21C748',
-                marginTop: 10,
-                fontSize: 15,
-              }}>
-              Crop check
-            </Text>
-          </TouchableOpacity>
-        </View>
-        <View
-          style={{
-            paddingHorizontal: 43,
-            paddingVertical: 20,
-            width: Dimensions.get('window').width,
-            flexWrap: 'wrap',
-            flexDirection: 'row',
+              paddingHorizontal: 43,
+              paddingVertical: 20,
+              width: Dimensions.get('window').width,
+              flexWrap: 'wrap',
+              flexDirection: 'row',
 
-            justifyContent: 'space-between',
-          }}>
-          <TouchableOpacity
-            style={{
-              width: 120,
-              height: 120,
-              elevation: 6,
-              backgroundColor: '#fff',
-              padding: 5,
-              borderRadius: 5,
-              alignItems: 'center',
+              // flex: 0.5,
+              justifyContent: 'space-between',
             }}>
-            <Image source={diseaseCheck} style={{height: 75, width: 75}} />
-            <Text
+            <TouchableOpacity
               style={{
-                color: '#21C748',
-                marginTop: 10,
-                fontSize: 15,
+                width: 120,
+                height: 120,
+                elevation: 6,
+                backgroundColor: '#fff',
+                padding: 5,
+                borderRadius: 5,
+                alignItems: 'center',
               }}>
-              Disease check
-            </Text>
-          </TouchableOpacity>
-          <TouchableOpacity
+              <Image source={farmCheck} style={{height: 75, width: 75}} />
+              <Text style={{color: '#21C748', marginTop: 10, fontSize: 15}}>
+                Farm check
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => {
+                props.navigation.navigate('Crop');
+              }}
+              style={{
+                width: 120,
+                height: 120,
+                elevation: 6,
+                backgroundColor: '#fff',
+                padding: 5,
+                borderRadius: 5,
+                alignItems: 'center',
+              }}>
+              <Image source={cropCheck} style={{height: 75, width: 75}} />
+              <Text
+                style={{
+                  color: '#21C748',
+                  marginTop: 10,
+                  fontSize: 15,
+                }}>
+                Crop check
+              </Text>
+            </TouchableOpacity>
+          </View>
+          <View
             style={{
-              width: 120,
-              height: 120,
-              elevation: 6,
-              backgroundColor: '#fff',
-              padding: 5,
-              borderRadius: 5,
-              alignItems: 'center',
-              alignSelf: 'flex-start',
+              paddingHorizontal: 43,
+              paddingVertical: 20,
+              width: Dimensions.get('window').width,
+              flexWrap: 'wrap',
+              flexDirection: 'row',
+
+              justifyContent: 'space-between',
             }}>
-            <Image source={dealer} style={{height: 75, width: 75}} />
-            <Text
+            <TouchableOpacity
               style={{
-                color: '#21C748',
-                marginTop: 10,
-                fontSize: 15,
+                width: 120,
+                height: 120,
+                elevation: 6,
+                backgroundColor: '#fff',
+                padding: 5,
+                borderRadius: 5,
+                alignItems: 'center',
               }}>
-              Dealers
-            </Text>
-          </TouchableOpacity>
-        </View>
+              <Image source={diseaseCheck} style={{height: 75, width: 75}} />
+              <Text
+                style={{
+                  color: '#21C748',
+                  marginTop: 10,
+                  fontSize: 15,
+                }}>
+                Disease check
+              </Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={{
+                width: 120,
+                height: 120,
+                elevation: 6,
+                backgroundColor: '#fff',
+                padding: 5,
+                borderRadius: 5,
+                alignItems: 'center',
+                alignSelf: 'flex-start',
+              }}>
+              <Image source={dealer} style={{height: 75, width: 75}} />
+              <Text
+                style={{
+                  color: '#21C748',
+                  marginTop: 10,
+                  fontSize: 15,
+                }}>
+                Dealers
+              </Text>
+            </TouchableOpacity>
+          </View>
+        </ScrollView>
       </View>
     </View>
   );

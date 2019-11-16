@@ -28,7 +28,7 @@ const RootStack = createStackNavigator(
     Crop: CropCheck,
   },
   {
-    initialRouteName: 'Home',
+    initialRouteName: 'Welcome',
     headerMode: 'none',
   },
 );
